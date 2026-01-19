@@ -1,0 +1,83 @@
+---
+title: "Penguin Cleaning"
+date: "2023-01-30"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+## Cleaning up data
+
+![Penguins](images/adamtest.png){width=50%}
+
+
+One of the essential tasks of data science.  
+Most data come to you in less than ideal format. 
+
+We'll use palmerpenguins package .
+
+Artwork by @allison_horst  
+
+##
+
+Please open up the cleaning.Rmd file from your project.   
+Follow along in the file.  
+Look at the two data sets in the package.  
+What differences do you see?   
+
+Put notes here:  
+https://docs.google.com/document/d/1ktFrbgNf08vIBbJpEZR0nyj29Pz9g63qeZ7obqyiSe4/edit?usp=sharing
+Keep updating those as we go.
+
+## Looking with code
+
+Just staring won't get us far.  
+
+Three base functions we can use to descibe a file:
+
+`nrow()`, `length()`, `names()`, `str()`. 
+
+Try those and keep updating the sheet as we go on.
+
+##  Interlude
+
+We're exploring and noting the differences.
+We can also start creating a list of things that need 
+to be done.
+
+![Penguin measures](images/culmen_depth.png){width=50%}
+Artwork by @allison_horst 
+
+## Tidy data
+
+![Tidy data](images/tidydata_1.jpeg){width=50%}
+
+Artwork by @allison_horst 
+
+## Tools for cleaning
+
+We can use many functions from base R and from 
+various packages to clean the data.
+
+We'll use dplyr functions (from the tidyverse)
+
+
+- `filter()`: keep rows that satisfy your conditions
+- `select()`: keep or exclude some columns
+- `rename()`: rename columns
+- `relocate()`: move columns around
+- `mutate()`: add a new column
+- `group_by()` + `summarize()`: get summary statistics by group
+- `across()`: apply a function across columns
+- `count()`: quickly find counts for different groups
+- `case_when()`: like friendly if-else
+
+(Horst https://github.com/allisonhorst/dplyr-learnr)
+
+## Let's go
+
+Now let's work on actually modifying things.
+
+
+

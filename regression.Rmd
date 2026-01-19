@@ -1,0 +1,105 @@
+---
+title: "Penguin Analysis"
+output: html_document
+date: '2022-06-02'
+---
+```{r}
+# set any options
+```
+```{r}
+# load packages
+```
+
+
+
+Now let's turn do doing some data analysis.  Let's use
+the already cleaned penguins data set. 
+Let's look at what predicts body mass of the penguins.
+
+What would be a variable that you think would
+predict body mass? 
+
+What kind of variable is it? Is it a numeric
+variable, a character or factor, or something else?
+
+Probably there are a number of variables that you 
+would be interested in.  
+
+One powerful way to incorporate multiple variables
+is using regression analysis.  So even though we
+will start with just one variable, we can build
+to a more complex model. 
+
+Let's try two variables, flipper_length and sex.
+
+How do these two variables differ?
+
+First let's look visually.  Because the variables
+are different we will use different visualizations.
+
+```{r}
+ggplot(penguins, aes(x = sex, y = body_mass_g)) +
+      geom_boxplot()
+```
+
+```{r}
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+      geom_point()
+```
+
+What do the relationships look like?  
+
+Let's do something neat and combine the two in one graph.
+
+```{r}
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+      geom_point(aes(color = sex))
+```
+
+What does this tell us? 
+
+
+Now let's put this into the form of a regression model.
+
+
+```{r}
+lm(body_mass_g ~ sex + flipper_length_mm, data= penguins)
+```
+
+This gives us an equation for the line.  
+Let's write that out.
+
+$$ $$
+
+```{r}
+results <- lm(body_mass_g ~ sex + flipper_length_mm, data= penguins)
+results
+summary(results)
+```
+
+```{r}
+anova(results)
+```
+
+Let's use the same process but with two different variables.
+Do the plots and run the regressions.
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+What did you learn?
+
+
+Now create a regression model that puts them all together.
+
+
+
+Challenges of regression:
+- assumes linearity
+- significance tests have important assumptions.
+

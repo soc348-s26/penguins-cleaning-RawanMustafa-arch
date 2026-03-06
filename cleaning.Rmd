@@ -122,4 +122,7 @@ penguins_new_extra <- penguins_raw |>
   )
 
 head(penguins_new_extra)
-```
+
+
+target_order <- attributes(penguins) |> names()
+attributes(penguins_new) <- attributes(penguins_new)[target_order]
